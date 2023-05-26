@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "URL Segment Extractor",
+  "version": "1.0",
+  "description": "Extracts the current page URL segment to clipboard.",
+  "permissions": ["clipboardWrite", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_title": "LinkedIn Post Header Extractor"
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+   "commands": {
+    "extract_segment": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+A",
+        "mac": "MacCtrl+Shift+A"
+      },
+      "description": "Extract URL Segment"
+    }
+  }
+}
