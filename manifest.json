@@ -14,7 +14,8 @@
     }
   ],
   "action": {
-    "default_title": "LinkedIn Post Header Extractor"
+    "default_title": "LinkedIn Post Header Extractor",
+    "default_popup": "popup/popup.html"
   },
   "icons": {
     "16": "icon.png",

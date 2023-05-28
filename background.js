@@ -27,3 +27,7 @@ function extractPosting() {
       console.error("Failed to copy URL segment to clipboard:", error);
     });
 }
+
+chrome.runtime.onMessage.addListener((msg) => {
+  console.log(msg.text);
+  });
