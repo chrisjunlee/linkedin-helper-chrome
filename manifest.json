@@ -1,20 +1,20 @@
 {
   "manifest_version": 3,
-  "name": "URL Segment Extractor",
-  "version": "1.0",
+  "name": "LinkedIn Job Seeker PowerTools",
+  "version": "1.01",
   "description": "Extracts the current page URL segment to clipboard.",
-  "permissions": ["clipboardWrite", "activeTab", "scripting"],
+  "permissions": ["notifications", "clipboardRead", "clipboardWrite", "activeTab", "scripting"],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
       "matches": ["https://www.linkedin.com/*"],
-      "js": ["content.js"]
+    "js": ["content.js", "test.js"]
     }
   ],
   "action": {
-    "default_title": "LinkedIn Post Header Extractor",
+    "default_title": "LinkedIn Job Seeker PowerTools",
     "default_popup": "popup/popup.html"
   },
   "icons": {
