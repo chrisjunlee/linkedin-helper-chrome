@@ -1,7 +1,7 @@
 var opts = {
   'alertOnExtract': true,
-  'alertOnExtractSize': '16px',
-  'alertOnExtractDuration': .8,
+  'alertOnExtractSize': '24px',
+  'alertOnExtractDuration': 1,
 }
 
 chrome.commands.onCommand.addListener(function(command) {
@@ -18,7 +18,7 @@ chrome.commands.onCommand.addListener(function(command) {
 const App = () => {
   function alertExtract(msg) {
     var alertElement = document.createElement("div")
-    alertElement.style.fontSize = "1em"
+    alertElement.style.fontSize = "1.5em"
     alertElement.style.fontFamily = "Monaco";
     alertElement.style.fontStyle = "normal";
     alertElement.style.fontWeight = "normal";
@@ -65,7 +65,7 @@ const App = () => {
     const dateString = date.toLocaleDateString('en-us', {month:'numeric', day:'2-digit', year: "2-digit"})
 
     var jobTitle = document.querySelector('h1.jobs-unified-top-card__job-title').textContent.trim()
-    var companyName = document.querySelector('span.jobs-unified-top-card__company-name').innerText.trim()
+    var companyName = document.querySelector('div.jobs-unified-top-card__primary-description a.app-aware-link').text
     var url = window.location.href.split("?").shift();
 
     var extractedText = [dateString, companyName, jobTitle, url].join('\t');
