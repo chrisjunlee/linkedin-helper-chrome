@@ -64,8 +64,8 @@ const App = () => {
     let date = new Date()
     const dateString = date.toLocaleDateString('en-us', {month:'numeric', day:'2-digit', year: "2-digit"})
 
-    var jobTitle = document.querySelector('h1.jobs-unified-top-card__job-title').textContent.trim()
-    var companyName = document.querySelector('div.jobs-unified-top-card__primary-description a.app-aware-link').text
+    var jobTitle = document.querySelector("h1.job-details-jobs-unified-top-card__job-title").textContent.trim();
+    var companyName = document.querySelector("div.job-details-jobs-unified-top-card__primary-description a.app-aware-link").text;
     var url = window.location.href.split("?").shift();
 
     var extractedText = [dateString, companyName, jobTitle, url].join('\t');
